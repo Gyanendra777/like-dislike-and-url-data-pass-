@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/ jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        .fa {
+            font-size: 100px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .fa:hover {
+            color: blueviolet;
+        }   
+    </style>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="demo" />
+        <button onclick="myFunction()">click me</button>
+        <p class="c"></p>
+    </form>
+    <i onclick="myFunctio(this)" class="fa fa-thumbs-up"></i>
+    <script>
+        function myFunctio(x) {
+            x.classList.toggle("fa-audio-description");
+        }
+
+        function myFunction() {
+            var user = document.getElementById('demo').value;
+            var url_String = window.location.href;
+            var url = new URL(url_String);
+            var c = url.searchParams.get("No");
+            var total = parseInt(user) + parseInt(c);
+            alert(total);
+        }
+    </script>
+</body>
+
+</html>
